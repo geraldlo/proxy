@@ -1,0 +1,20 @@
+name = "proxy"
+main = "src/index.ts"
+compatibility_date = "2025-09-01"
+compatibility_flags = ["nodejs_compat"]
+
+routes = [
+  # { pattern = "your-domain.example.com", custom_domain = true }  # 可选:自定义域名
+]
+
+# KV：面板配置存储
+[[kv_namespaces]]
+binding = "KV"
+id = "b8288deff3db463c8f0802b0537157a5"
+
+[vars]
+# UUID 节点认证：部署时生成一次写入（非机密但应稳定）
+UUID = "b445b10d-5b4c-478f-82aa-a0748442bd9c" # ← 换成你自己的 UUIDv4
+
+[observability]
+enabled = true
